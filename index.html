@@ -3,1167 +3,217 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#FAFAF7">
+<meta name="theme-color" content="#F4F1EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16120F" media="(prefers-color-scheme: dark)">
 <meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Manual de transporte da viagem Amsterdam ⇄ Paris, 02 a 08 de dezembro de 2026.">
+<title>GPS de Viagem — Amsterdam ⇄ Paris</title>
+
 <link rel="preload" as="image" href="img/hero.webp" type="image/webp" fetchpriority="high">
-<title>GPS de Viagem</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
-<style>
-  :root{
-    --bg:#FAFAF7;
-    --surface:rgba(255,252,246,.80);
-    --surface-2:rgba(244,240,230,.66);
-    --ink:#171B1F;
-    --ink-soft:#5B6470;
-    --ink-faint:#8D96A0;
-    --hairline:#E6E7E0;
-
-    --nl:#17539E;      --nl-soft:#E9F1FC;
-    --fr:#A6293F;       --fr-soft:#FBEAEE;
-    --eurostar:#8A6A1F; --eurostar-soft:#FBF2DC;
-    --air:#0E7C86;      --air-soft:#E3F4F4;
-
-    --warn-bg:#FFF4DC; --warn-ink:#7A5200; --warn-border:#EFC36C;
-    --danger-bg:#FDEBEA; --danger-ink:#A32A2A; --danger-border:#F0B4AE;
-    --confirmed-bg:#E7F6ED; --confirmed-ink:#1E7A45; --confirmed-border:#A9DDBC;
-
-    --radius:16px;
-    --radius-sm:10px;
-    color-scheme:light;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#0D1115; --surface:rgba(20,24,29,.78); --surface-2:rgba(34,39,46,.62);
-      --ink:#EEF1F3; --ink-soft:#AEB6BE; --ink-faint:#78828B;
-      --hairline:#2A2F35;
-      --nl:#6FA3E6; --nl-soft:#152B41;
-      --fr:#E08A98; --fr-soft:#3A1B21;
-      --eurostar:#E4BE6E; --eurostar-soft:#332711;
-      --air:#5FC7CE; --air-soft:#103235;
-      --warn-bg:#332711; --warn-ink:#F0C978; --warn-border:#5C4A1E;
-      --danger-bg:#33191A; --danger-ink:#F0A6A6; --danger-border:#5C2A2A;
-      --confirmed-bg:#12281C; --confirmed-ink:#84DDA3; --confirmed-border:#245C39;
-      color-scheme:dark;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#0D1115; --surface:rgba(20,24,29,.78); --surface-2:rgba(34,39,46,.62);
-    --ink:#EEF1F3; --ink-soft:#AEB6BE; --ink-faint:#78828B;
-    --hairline:#2A2F35;
-    --nl:#6FA3E6; --nl-soft:#152B41;
-    --fr:#E08A98; --fr-soft:#3A1B21;
-    --eurostar:#E4BE6E; --eurostar-soft:#332711;
-    --air:#5FC7CE; --air-soft:#103235;
-    --warn-bg:#332711; --warn-ink:#F0C978; --warn-border:#5C4A1E;
-    --danger-bg:#33191A; --danger-ink:#F0A6A6; --danger-border:#5C2A2A;
-    --confirmed-bg:#12281C; --confirmed-ink:#84DDA3; --confirmed-border:#245C39;
-    color-scheme:dark;
-  }
-
-  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
-  html,body{height:100%;}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font-family:'Work Sans', system-ui, sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit;}
-  button{font-family:inherit; cursor:pointer;}
-  h1,h2,h3,h4{margin:0; text-wrap:balance;}
-  .display{font-family:'Fraunces', Georgia, serif;}
-  .mono{font-family:'IBM Plex Mono', ui-monospace, monospace; font-variant-numeric:tabular-nums;}
-  [hidden]{display:none !important;}
-
-  .wrap{max-width:600px; margin-inline:auto; padding-inline:18px;}
-
-  main{padding-bottom:110px;}
-  .view{padding-top:22px;}
-
-  /* ---------------- Top identity strip ---------------- */
-  .brandbar{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:14px 18px; max-width:600px; margin-inline:auto;
-  }
-  .brandbar .name{font-family:'Fraunces',serif; font-weight:600; font-size:15px; letter-spacing:.01em;}
-  .brandbar .days{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--ink-faint);}
-
-  /* ---------------- Hero ---------------- */
-  .hero{padding-block:6px 20px;}
-  .hero .eyebrow{
-    font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.12em;
-    text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px;
-  }
-  .hero h1{
-    font-size:clamp(30px, 9vw, 44px); font-weight:600; line-height:1.02; color:var(--ink);
-  }
-  .hero h1 .arrow{color:var(--ink-faint); font-weight:400; margin:0 4px;}
-  .hero .sub{margin-top:10px; font-size:15.5px; color:var(--ink-soft); line-height:1.5;}
-  .hero .dates{
-    margin-top:16px; font-family:'IBM Plex Mono',monospace; font-size:13px;
-    color:var(--ink); background:var(--surface); border:1px solid var(--hairline);
-    display:inline-flex; padding:7px 14px; border-radius:100px;
-  }
-  .facts{display:flex; gap:8px; margin-top:14px; flex-wrap:wrap;}
-  .fact-chip{
-    background:var(--surface); border:1px solid var(--hairline); border-radius:100px;
-    padding:7px 13px; font-size:12.5px; color:var(--ink-soft); display:flex; gap:6px; align-items:center;
-  }
-
-  /* ---------------- Next route card ---------------- */
-  .next-card{
-    margin-top:22px; background:var(--surface); border:1px solid var(--hairline);
-    border-radius:var(--radius); padding:20px; position:relative; overflow:hidden;
-  }
-  .next-card::before{
-    content:''; position:absolute; inset:0 0 auto 0; height:4px; background:var(--accent, var(--nl));
-  }
-  .next-label{
-    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase;
-    color:var(--accent, var(--nl)); font-weight:600; margin-bottom:8px;
-  }
-  .next-title{font-family:'Fraunces',serif; font-weight:600; font-size:21px; margin-bottom:4px;}
-  .next-time{font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--ink-soft); margin-bottom:14px;}
-  .chain{display:flex; flex-direction:column; gap:0;}
-  .chain-node{display:flex; align-items:center; gap:10px; padding-block:5px;}
-  .chain-dot{width:8px; height:8px; border-radius:50%; background:var(--accent, var(--nl)); flex:none;}
-  .chain-place{font-size:14.5px; font-weight:500;}
-  .chain-mode{
-    display:flex; align-items:center; gap:8px; padding-left:0px; margin-left:3px;
-    font-size:13px; color:var(--ink-soft);
-  }
-  .chain-line{width:2px; height:16px; background:var(--hairline); margin-left:3px;}
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:8px;
-    border:none; border-radius:100px; font-weight:600; font-size:15px;
-    padding:14px 22px; width:100%; margin-top:16px;
-  }
-  .btn-primary{background:var(--ink); color:var(--bg);}
-  .btn-outline{background:transparent; border:1.5px solid var(--hairline); color:var(--ink);}
-  .btn-sm{padding:9px 16px; font-size:13.5px; width:auto; margin-top:0;}
-
-  /* ---------------- Section headers ---------------- */
-  .sec-head{margin:34px 0 14px;}
-  .sec-head .kicker{
-    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.12em;
-    text-transform:uppercase; color:var(--ink-faint);
-  }
-  .sec-head h2{font-family:'Fraunces',serif; font-weight:600; font-size:24px; margin-top:4px;}
-
-  /* ---------------- Route list cards ---------------- */
-  .route-grid{display:flex; flex-direction:column; gap:10px;}
-  .route-card{
-    background:var(--surface); border:1px solid var(--hairline); border-radius:var(--radius);
-    padding:16px; display:flex; flex-direction:column; gap:10px; text-align:left; width:100%;
-  }
-  .route-card-top{display:flex; align-items:flex-start; justify-content:space-between; gap:10px;}
-  .route-code{
-    font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.1em;
-    color:var(--accent); font-weight:600; margin-bottom:4px; display:block;
-  }
-  .route-title{font-size:16.5px; font-weight:600; color:var(--ink);}
-  .route-date{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--ink-faint); white-space:nowrap;}
-  .route-meta{display:flex; align-items:center; gap:14px; font-size:12.5px; color:var(--ink-soft);}
-  .route-meta span{display:flex; align-items:center; gap:5px;}
-  .route-pill{
-    width:34px; height:34px; border-radius:50%; background:var(--accent-soft); color:var(--accent);
-    display:flex; align-items:center; justify-content:center; font-size:16px; flex:none;
-  }
-
-  /* ---------------- Detail overlay ---------------- */
-  .overlay{
-    position:fixed; inset:0; background:var(--bg); z-index:50;
-    overflow-y:auto; -webkit-overflow-scrolling:touch;
-  }
-  .overlay-header{
-    position:sticky; top:0; z-index:2; background:var(--bg);
-    display:flex; align-items:center; gap:12px; padding:14px 18px;
-    border-bottom:1px solid var(--hairline);
-    padding-top:calc(14px + env(safe-area-inset-top,0px));
-  }
-  .back-btn{
-    background:var(--surface); border:1px solid var(--hairline); border-radius:100px;
-    width:38px; height:38px; display:flex; align-items:center; justify-content:center; font-size:17px; flex:none;
-  }
-  .overlay-header .oh-title{font-size:14.5px; font-weight:600; color:var(--ink-soft);}
-  .overlay-body{padding:20px 18px 60px; max-width:600px; margin-inline:auto;}
-  .detail-hero h2{font-family:'Fraunces',serif; font-weight:600; font-size:25px;}
-  .detail-hero .date{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--ink-faint); margin-top:6px;}
-
-  .leg-block{margin-top:26px;}
-  .leg-title{
-    display:flex; align-items:center; gap:8px; margin-bottom:12px;
-    font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.08em; text-transform:uppercase;
-    color:var(--accent);
-  }
-  .leg-title .bar{width:16px; height:4px; border-radius:2px; background:var(--accent);}
-
-  .timeline{position:relative;}
-  .step{
-    position:relative; padding-left:30px; padding-bottom:18px;
-  }
-  .step::before{
-    content:''; position:absolute; left:5px; top:3px; width:11px; height:11px;
-    border-radius:50%; background:var(--surface); border:2.5px solid var(--accent);
-  }
-  .step::after{
-    content:''; position:absolute; left:10px; top:16px; bottom:-4px; width:2px; background:var(--hairline);
-  }
-  .step:last-child::after{display:none;}
-  .step-label{
-    font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
-    color:var(--ink-faint); margin-bottom:3px;
-  }
-  .step-value{font-size:15px; color:var(--ink); line-height:1.45;}
-  .step-value b{font-weight:600;}
-  .step-sub{font-size:12.5px; color:var(--ink-soft); margin-top:2px;}
-
-  .nc{
-    display:inline-block; background:var(--warn-bg); color:var(--warn-ink);
-    border:1px solid var(--warn-border); font-family:'IBM Plex Mono',monospace;
-    font-size:10.5px; letter-spacing:.03em; padding:2px 8px; border-radius:5px; white-space:nowrap;
-  }
-
-  .info-row{
-    display:flex; justify-content:space-between; gap:12px; align-items:flex-start;
-    padding:11px 0; border-bottom:1px solid var(--hairline); font-size:14px;
-  }
-  .info-row:last-child{border-bottom:none;}
-  .info-row .k{color:var(--ink-faint); font-size:12px; font-family:'IBM Plex Mono',monospace; letter-spacing:.04em; text-transform:uppercase; flex:none; width:110px;}
-  .info-row .v{color:var(--ink); text-align:right; flex:1;}
-
-  .confirmed-box{
-    margin-top:18px; background:var(--confirmed-bg); border:1px solid var(--confirmed-border);
-    border-radius:var(--radius-sm); padding:14px 16px;
-  }
-  .confirmed-box .tag{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--confirmed-ink); font-weight:700;}
-  .confirmed-box .time{font-family:'IBM Plex Mono',monospace; font-size:26px; font-weight:600; color:var(--ink); margin-top:5px;}
-  .confirmed-box .time .arrow{color:var(--ink-faint); margin:0 10px; font-weight:400;}
-  .confirmed-box .sub{font-size:12.5px; color:var(--ink-soft); margin-top:4px;}
-
-  .rec-note{
-    margin-top:14px; background:var(--surface-2); border-left:3px solid var(--ink-faint);
-    border-radius:0 8px 8px 0; padding:11px 14px; font-size:13px; color:var(--ink-soft); line-height:1.5;
-  }
-  .rec-note b{color:var(--ink);}
-
-  .alert-box{
-    margin-top:18px; background:var(--danger-bg); border:1.5px solid var(--danger-border);
-    border-radius:var(--radius-sm); padding:16px;
-  }
-  .alert-box .head{
-    display:flex; align-items:center; gap:8px; font-weight:700; font-size:15px; color:var(--danger-ink); margin-bottom:8px;
-  }
-  .alert-box ul{margin:0; padding-left:20px; color:var(--danger-ink);}
-  .alert-box li{font-size:13.5px; line-height:1.55; margin-bottom:4px;}
-  .alert-box li:last-child{margin-bottom:0;}
-
-  .maps-btn{
-    margin-top:20px; display:flex; align-items:center; justify-content:center; gap:8px;
-    background:var(--air-soft); color:var(--air); border:1px solid var(--air);
-    border-radius:100px; padding:14px; font-weight:600; font-size:14.5px; text-decoration:none;
-  }
-
-  /* ---------------- Se eu me perder ---------------- */
-  .lost-panel{
-    background:var(--surface); border:1px solid var(--hairline); border-radius:var(--radius);
-    padding:22px 20px;
-  }
-  .lost-panel h2{font-family:'Fraunces',serif; font-weight:600; font-size:22px;}
-  .lost-panel p{font-size:14px; color:var(--ink-soft); margin:10px 0 0; line-height:1.55;}
-  .lost-steps{display:flex; gap:10px; margin:16px 0;}
-  .lost-step{flex:1; text-align:center; background:var(--surface-2); border-radius:12px; padding:16px 6px;}
-  .lost-step .n{font-family:'Fraunces',serif; font-weight:700; font-size:26px; color:var(--nl);}
-  .lost-step .t{font-size:11.5px; color:var(--ink-soft); margin-top:4px; letter-spacing:.02em; font-weight:600;}
-  .maps-placeholder{
-    margin-top:6px; display:flex; align-items:center; justify-content:center; gap:8px;
-    background:var(--surface-2); color:var(--ink-soft); border:1px dashed var(--hairline);
-    border-radius:100px; padding:14px; font-weight:600; font-size:14px;
-  }
-
-  /* ---------------- Não confunda global ---------------- */
-  .confuse-global{display:flex; flex-direction:column; gap:10px;}
-  .confuse-card{
-    background:var(--surface); border:1px solid var(--hairline); border-left:4px solid var(--danger-ink);
-    border-radius:var(--radius-sm); padding:14px 16px;
-  }
-  .confuse-card h4{font-size:14.5px; font-weight:700; margin-bottom:8px; display:flex; align-items:center; gap:6px;}
-  .confuse-card .line{font-size:13.5px; color:var(--ink); margin-bottom:4px; line-height:1.5;}
-  .confuse-card .no{color:var(--danger-ink); font-weight:600;}
-
-  /* ---------------- Eurostar view ---------------- */
-  .eu-card{
-    background:var(--eurostar-soft); border:1px solid var(--eurostar); border-radius:var(--radius);
-    padding:20px; margin-bottom:16px;
-  }
-  .eu-flags{font-size:20px; margin-bottom:6px;}
-  .eu-date{font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--eurostar); font-weight:700;}
-  .eu-train{font-family:'Fraunces',serif; font-size:19px; font-weight:600; margin-top:4px;}
-  .eu-time{font-family:'IBM Plex Mono',monospace; font-size:28px; font-weight:600; margin-top:10px;}
-  .eu-time .arrow{color:var(--ink-faint); margin:0 10px; font-weight:400;}
-  .eu-chain{margin-top:12px; font-size:14px; color:var(--ink-soft);}
-  .eu-chain span{color:var(--ink); font-weight:500;}
-
-  /* ---------------- Checklist ---------------- */
-  .check-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px;}
-  .check-item{
-    display:flex; align-items:center; gap:12px;
-    background:var(--surface); border:1px solid var(--hairline);
-    border-radius:var(--radius-sm); padding:15px 14px;
-    font-size:15px; color:var(--ink);
-  }
-  .check-item .box{
-    flex:none; width:22px; height:22px; border:2px solid var(--ink-faint); border-radius:6px;
-    display:flex; align-items:center; justify-content:center; font-size:13px; color:transparent;
-  }
-  .check-item.done{background:var(--confirmed-bg); border-color:var(--confirmed-border);}
-  .check-item.done .box{background:var(--confirmed-ink); border-color:var(--confirmed-ink); color:#fff;}
-  .check-item.done .lbl{color:var(--confirmed-ink); text-decoration:line-through; opacity:.8;}
-  .check-progress{
-    font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--ink-faint); margin-bottom:12px;
-  }
-
-  .stay-list{display:flex; flex-direction:column; gap:10px;}
-  .stay-card{
-    background:var(--surface); border:1px solid var(--hairline); border-left:4px solid var(--accent);
-    border-radius:var(--radius-sm); padding:14px 16px;
-  }
-  .stay-card .st-kicker{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); font-weight:600;}
-  .stay-card h4{font-size:16px; font-weight:600; margin:3px 0 2px;}
-  .stay-card .addr{font-size:13px; color:var(--ink-soft);}
-  .stay-times{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px;}
-  .stay-times div{background:var(--surface-2); border-radius:8px; padding:8px 10px;}
-  .stay-times .k{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint);}
-  .stay-times .v{font-size:14px; font-weight:600; margin-top:2px;}
-  .src{font-size:11px; color:var(--ink-faint); margin-top:8px;}
-
-  footer.note{
-    margin-top:36px; padding-top:16px; border-top:1px solid var(--hairline);
-    font-size:11.5px; color:var(--ink-faint); line-height:1.6;
-  }
-
-  /* ---------------- Bottom nav ---------------- */
-  #bottomnav{
-    position:fixed; left:0; right:0; bottom:0; z-index:40;
-    background:var(--surface); border-top:1px solid var(--hairline);
-    display:flex; padding-top:8px;
-    padding-bottom:calc(8px + env(safe-area-inset-bottom,0px));
-  }
-  #bottomnav button{
-    flex:1; background:none; border:none; display:flex; flex-direction:column; align-items:center; gap:3px;
-    color:var(--ink-faint); font-size:11px; font-weight:600; padding:4px 2px;
-  }
-  #bottomnav button .ic{font-size:20px;}
-  #bottomnav button.active{color:var(--ink);}
-
-  /* =========================================================
-     CAMADA VISUAL — "diário de viagem"
-     Só apresentação. Nenhuma regra abaixo muda dados/lógica.
-     ========================================================= */
-  :root{
-    --hero-img: url("img/hero.webp");
-    --hero-pos: 50% 40%;
-    --diary-pos: 50% 55%;
-    --glass-border: rgba(255,255,255,.62);
-    --glass-shadow: 0 1px 2px rgba(40,28,14,.05), 0 12px 32px -14px rgba(40,28,14,.22);
-    --glass-blur: blur(14px) saturate(1.12);
-    --veil: linear-gradient(180deg, rgba(250,247,240,.34) 0%, rgba(250,247,240,.46) 100%);
-    --halo: 0 0 14px rgba(250,247,240,.95), 0 0 3px rgba(250,247,240,.9);
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --glass-border: rgba(255,255,255,.09);
-      --glass-shadow: 0 1px 2px rgba(0,0,0,.2), 0 12px 32px -14px rgba(0,0,0,.6);
-      --veil: linear-gradient(180deg, rgba(13,17,21,.58) 0%, rgba(13,17,21,.72) 100%);
-      --halo: 0 0 14px rgba(13,17,21,.95), 0 0 3px rgba(13,17,21,.9);
-    }
-  }
-  :root[data-theme="dark"]{
-    --glass-border: rgba(255,255,255,.09);
-    --glass-shadow: 0 1px 2px rgba(0,0,0,.2), 0 12px 32px -14px rgba(0,0,0,.6);
-    --veil: linear-gradient(180deg, rgba(13,17,21,.58) 0%, rgba(13,17,21,.72) 100%);
-    --halo: 0 0 14px rgba(13,17,21,.95), 0 0 3px rgba(13,17,21,.9);
-  }
-
-  html{background:var(--bg);}
-  body{background:transparent; position:relative; isolation:isolate; min-height:100svh; display:flow-root;}
-
-  /* --- Camada 2: imagem do diário (fixa atrás do conteúdo, carregada depois) --- */
-  body::after{
-    content:''; position:fixed; inset:0; z-index:-2; pointer-events:none;
-    background-image: var(--veil), var(--diary-img, none);
-    background-size: auto, cover;
-    background-position: 0 0, var(--diary-pos);
-    background-repeat: no-repeat;
-    opacity:0; transition:opacity .9s ease;
-  }
-  html.diary-ready body::after{opacity:1;}
-
-  /* --- Camada 1: imagem do Hero (só na aba Início, rola junto com a página) --- */
-  body::before{
-    content:''; position:absolute; top:0; left:0; right:0; height:100svh; z-index:-1; pointer-events:none;
-    background-image: var(--hero-img);
-    background-size: cover;
-    background-position: var(--hero-pos);
-    background-repeat: no-repeat;
-    -webkit-mask-image: linear-gradient(to bottom, #000 90%, transparent 100%);
-            mask-image: linear-gradient(to bottom, #000 90%, transparent 100%);
-    animation: heroIn 1.1s ease-out both;
-  }
-  body:has(#view-inicio[hidden])::before{display:none;}
-  @keyframes heroIn{ from{opacity:0;} to{opacity:1;} }
-  /* Parallax sutil: a foto do Hero desce mais devagar que o conteúdo (só vertical, sem overflow lateral).
-     Usa scroll-driven animation nativa: sem JS, sem custo no scroll; navegadores sem suporte simplesmente não animam. */
-  @supports (animation-timeline: scroll()){
-    body::before{
-      animation: heroIn 1.1s ease-out both, heroDrift linear both;
-      animation-timeline: auto, scroll(root);
-      animation-range: normal, 0 100svh;
-    }
-    @keyframes heroDrift{ from{translate:0 0;} to{translate:0 16svh;} }
-  }
-
-  /* Hero: o texto fica sobre as páginas em branco do diário */
-  .hero{
-    /* a imagem é sempre clara (papel), então o Hero usa tinta escura em qualquer tema */
-    --ink:#1B1712; --ink-soft:#4A4238; --ink-faint:#6E6457;
-    --surface: rgba(255,252,246,.78);
-    --hairline: rgba(60,45,25,.14);
-    min-height: calc(100svh - 84px);
-    padding-top: clamp(28px, 8svh, 84px);
-    padding-bottom: 24px;
-    color: var(--ink);
-  }
-  .hero .dates, .hero .fact-chip{
-    border-color: rgba(255,255,255,.7);
-    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
-  }
-
-  /* Barra superior: pílula flutuante legível sobre qualquer foto */
-  .brandbar{
-    margin-top: calc(10px + env(safe-area-inset-top,0px));
-    width: calc(100% - 24px); max-width: 580px;
-    padding: 10px 18px; border-radius: 100px;
-    background: var(--surface); border:1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
-    -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
-  }
-  .brandbar .days{color:var(--ink-soft);}
-
-  /* Cards: transparência sutil + blur discreto */
-  .next-card, .route-card, .stay-card, .lost-panel, .confuse-card,
-  .eu-card, .check-item, .alert-box, .btn-outline, .maps-placeholder, #bottomnav{
-    -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
-  }
-  .next-card, .route-card, .stay-card, .lost-panel, .confuse-card, .eu-card, .check-item, .alert-box{
-    box-shadow: var(--glass-shadow);
-  }
-  .next-card, .route-card, .lost-panel, .check-item{ border-color: var(--glass-border); }
-  .stay-card, .confuse-card{
-    border-top-color: var(--glass-border); border-right-color: var(--glass-border); border-bottom-color: var(--glass-border);
-  }
-  .btn-outline{ background: var(--surface); border-color: var(--glass-border); }
-  .route-card .btn-outline{ background: transparent; border-color: var(--hairline); -webkit-backdrop-filter:none; backdrop-filter:none; }
-  .eu-card{ background: color-mix(in srgb, var(--eurostar-soft) 84%, transparent); }
-  .alert-box{ background: color-mix(in srgb, var(--danger-bg) 90%, transparent) !important; }
-  .check-item.done{ background: color-mix(in srgb, var(--confirmed-bg) 88%, transparent); }
-  .lost-step{ background: var(--surface-2); }
-
-  /* Textos que ficam direto sobre a foto ganham um halo suave */
-  .sec-head .kicker, .check-progress{ color: var(--ink-soft); }
-  .sec-head h2, .sec-head .kicker, .check-progress{ text-shadow: var(--halo); }
-
-  footer.note{
-    border-top:none; padding:14px 16px; border-radius: var(--radius-sm);
-    background: var(--surface); color: var(--ink-soft);
-    -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
-  }
-
-  #bottomnav{ border-top-color: var(--glass-border); box-shadow: 0 -8px 24px -16px rgba(40,28,14,.25); }
-
-  /* Detalhe da rota: tela de leitura, fundo sólido (legibilidade em primeiro lugar) */
-  .overlay{ isolation:isolate; }
-
-  /* --- Enquadramento em telas retrato (celular / tablet em pé) ---
-     A faixa visível da imagem é estreita: priorizamos o lado esquerdo
-     do diário (casal + fotos de Amsterdam) e o casal no campo, na imagem 2. */
-  @media (max-aspect-ratio: 1/1){
-    :root{ --hero-pos: 6% 50%; --diary-pos: 61% 60%; }
-    body::before{
-      background-image:
-        linear-gradient(180deg, rgba(250,246,238,.74) 0%, rgba(250,246,238,.55) 30%, rgba(250,246,238,0) 50%),
-        var(--hero-img);
-      background-size: auto, cover;
-      background-position: 0 0, var(--hero-pos);
-    }
-    .hero{ padding-top: clamp(20px, 5svh, 48px); }
-  }
-
-  /* Movimento só para quem não pediu redução */
-  @media (prefers-reduced-motion: reduce){
-    body::before{ animation:none; }
-    body::after{ transition:none; }
-  }
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="brandbar">
-  <span class="name display">Amsterdam ⇄ Paris</span>
+<!-- ===================== BARRA SUPERIOR ===================== -->
+<header class="topbar">
+  <span class="brand mono">AMS ⇄ PAR</span>
+  <span class="sep"></span>
   <span class="days mono">02—08 DEZ</span>
-</div>
+  <button class="sos-btn" onclick="openSos()" aria-label="Abrir emergência">SOS</button>
+</header>
 
 <main>
   <div class="wrap">
 
-    <!-- ===================== VIEW: INÍCIO ===================== -->
-    <section id="view-inicio" class="view">
-      <div class="hero">
-        <div class="eyebrow">Seu GPS de viagem</div>
-        <h1 class="display">AMSTERDAM <span class="arrow">→</span> PARIS</h1>
-        <p class="sub">Seu manual de transporte, sem precisar pensar.</p>
-        <div class="dates">02 DEZ → 08 DEZ 2026</div>
-        <div class="facts">
-          <span class="fact-chip">🇳🇱 Amsterdam</span>
-          <span class="fact-chip">🇫🇷 Paris</span>
-          <span class="fact-chip">🚆 2 viagens Eurostar</span>
+    <!-- ===================== AGORA ===================== -->
+    <section id="view-agora" class="view">
+      <div class="hero-photo">
+        <div class="cap">
+          <div class="k">Seu GPS de viagem</div>
+          <div class="t">AMSTERDAM <span class="arrow">→</span> PARIS</div>
         </div>
       </div>
 
-      <div id="nextRouteCard"></div>
+      <div id="countdown"></div>
+      <div id="nextCard"></div>
 
-      <div class="sec-head">
-        <div class="kicker">Acesso rápido</div>
-      </div>
-      <div style="display:flex; gap:10px;">
-        <button class="btn btn-outline" style="margin-top:0;" onclick="showView('rotas')">🧭 Todas as rotas</button>
-        <button class="btn btn-outline" style="margin-top:0;" onclick="showView('eurostar')">🚄 Eurostar</button>
+      <div class="triad">
+        <div><div class="n mono">1</div><div class="t">LINHA</div></div>
+        <div><div class="n mono">2</div><div class="t">DIREÇÃO</div></div>
+        <div><div class="n mono">3</div><div class="t">DESTINO</div></div>
       </div>
 
       <div class="sec-head">
-        <div class="kicker">Das suas reservas</div>
-        <h2>Hospedagens e horários fixos</h2>
+        <div class="kicker">Antes de sair</div>
+        <h2 id="ckTitle">Checklist</h2>
       </div>
-      <div class="stay-list">
-        <div class="stay-card" style="--accent:var(--nl)">
-          <div class="st-kicker">🇳🇱 Amsterdam · 02–04 dez</div>
-          <h4>Volkshotel Amsterdam</h4>
-          <div class="addr">Wibautstraat 150 · Quarto XS</div>
-          <div class="stay-times">
-            <div><div class="k">Check-in</div><div class="v">Qua 02/12 · a partir 16:00</div></div>
-            <div><div class="k">Checkout</div><div class="v">Sex 04/12 · até 12:00</div></div>
-          </div>
-          <div class="src">Fonte: reserva Airbnb</div>
-        </div>
-        <div class="stay-card" style="--accent:var(--fr)">
-          <div class="st-kicker">🇫🇷 Paris · 04–07 dez</div>
-          <h4>Acomodação em Paris (anfitrião Walid)</h4>
-          <div class="addr">12 Avenue de l'Observatoire, 75006</div>
-          <div class="stay-times">
-            <div><div class="k">Check-in</div><div class="v">Sex 04/12 · 16:00</div></div>
-            <div><div class="k">Checkout</div><div class="v">Seg 07/12 · 11:00</div></div>
-          </div>
-          <div class="src">Fonte: reserva Airbnb</div>
-        </div>
+      <div class="ck-head">
+        <span class="ck-n mono" id="ckCount"></span>
+      </div>
+      <div class="ck-bar"><i id="ckBar"></i></div>
+      <ul class="ck-list" id="checklist"></ul>
+
+      <div id="agoraAlerts"></div>
+
+      <footer class="note-foot" id="footNote"></footer>
+    </section>
+
+    <!-- ===================== VIAGEM ===================== -->
+    <section id="view-viagem" class="view" hidden>
+      <div class="sec-head">
+        <div class="kicker">Itinerário completo</div>
+        <h2>A viagem inteira</h2>
+        <p class="sub">Rotas e hospedagens na mesma linha do tempo. Toque numa rota para abrir o cartão completo.</p>
+      </div>
+      <div id="timeline"></div>
+    </section>
+
+    <!-- ===================== FRASES ===================== -->
+    <section id="view-frases" class="view" hidden>
+      <div class="sec-head">
+        <div class="kicker">Para falar</div>
+        <h2>Frases</h2>
+        <p class="sub">Toque numa frase para ampliar e mostrar para a outra pessoa.</p>
+      </div>
+      <div class="lang-switch" id="langSwitch"></div>
+      <div id="phrasesBody"></div>
+    </section>
+
+    <!-- ===================== GASTOS ===================== -->
+    <section id="view-gastos" class="view" hidden>
+      <div class="sec-head">
+        <div class="kicker">Quanto saiu</div>
+        <h2>Gastos</h2>
       </div>
 
-      <div class="alert-box" style="background:var(--danger-bg); margin-top:20px;">
-        <div class="head">⚠️ Hospedagem faltando</div>
-        <ul>
-          <li>Noite de <b>07/12 em Amsterdam</b>: não aparece nas reservas enviadas. O Volkshotel cobre apenas 02–04/12. Confirme esta cobertura antes de viajar.</li>
-        </ul>
+      <div class="rate-box">
+        <div class="field">
+          <label for="rateInput">Cotação EUR → BRL</label>
+          <input id="rateInput" type="number" inputmode="decimal" step="0.01" min="0" placeholder="6,00">
+        </div>
+        <button class="btn" onclick="saveRate()">Fixar</button>
+        <div class="rate-note mono" id="rateNote"></div>
+      </div>
+
+      <div class="totals" id="totals"></div>
+      <div class="cat-bars" id="catBars"></div>
+
+      <div class="sec-head">
+        <div class="kicker">Lançar</div>
+        <h2>Novo gasto</h2>
+      </div>
+      <div class="rate-box">
+        <div class="field">
+          <label for="expDesc">Descrição</label>
+          <input id="expDesc" type="text" placeholder="Metrô, almoço, ingresso…">
+        </div>
+        <div class="field">
+          <label for="expAmt">Valor (€)</label>
+          <input id="expAmt" type="number" inputmode="decimal" step="0.01" min="0" placeholder="0,00">
+        </div>
+        <div class="field">
+          <label for="expCat">Categoria</label>
+          <select id="expCat"></select>
+        </div>
+        <button class="btn primary" onclick="addExpense()">Lançar</button>
+        <div class="rate-note mono" id="fareShortcuts"></div>
       </div>
 
       <div class="sec-head">
-        <div class="kicker">A parte mais importante</div>
-        <h2>Se eu me perder</h2>
+        <div class="kicker">Histórico</div>
+        <h2>Lançamentos</h2>
       </div>
-      <div class="lost-panel">
-        <p>Antes de entrar em qualquer trem ou metrô, confira <b style="color:var(--ink)">sempre</b> estes 3 itens. Se os três baterem, embarque.</p>
-        <div class="lost-steps">
-          <div class="lost-step"><div class="n">1</div><div class="t">LINHA</div></div>
-          <div class="lost-step"><div class="n">2</div><div class="t">DIREÇÃO</div></div>
-          <div class="lost-step"><div class="n">3</div><div class="t">DESTINO</div></div>
-        </div>
-        <p>Se embarcou errado: desça na próxima parada e volte — as linhas rodam nos dois sentidos com frequência alta.</p>
-        <div class="maps-placeholder">📍 Botão Google Maps disponível dentro de cada rota</div>
+      <div class="exp-list" id="expList"></div>
+      <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
+        <button class="btn sm" onclick="exportExpenses()">Exportar JSON</button>
+        <button class="btn sm" onclick="document.getElementById('impFile').click()">Importar</button>
+        <input id="impFile" type="file" accept="application/json" hidden onchange="importExpenses(event)">
       </div>
+    </section>
+
+    <!-- ===================== GUIA ===================== -->
+    <section id="view-guia" class="view" hidden>
+      <div class="sec-head">
+        <div class="kicker">Ideias</div>
+        <h2>Guia</h2>
+      </div>
+
+      <div class="contract">
+        <span class="ic">⚖️</span>
+        <p><b>Aqui são sugestões, não dado auditado.</b> Este guia não exibe horário nem preço de nada — use o botão <b>Site oficial</b> para confirmar antes de ir.</p>
+      </div>
+
+      <div class="city-switch" id="citySwitch"></div>
+      <div id="placesBody"></div>
+
+      <div class="sec-head">
+        <div class="kicker">Bom saber</div>
+        <h2>Avisos práticos</h2>
+      </div>
+      <div id="tipsBody"></div>
 
       <div class="sec-head">
         <div class="kicker">Referência rápida</div>
         <h2>Não confunda</h2>
       </div>
-      <div class="confuse-global">
-        <div class="confuse-card" style="border-left-color:var(--nl)">
-          <h4>🔴 Amsterdam</h4>
-          <div class="line"><b>Linha 53/54 → Gaasperplas / Gein</b> — para ir a Wibautstraat.</div>
-          <div class="line"><b>Linha 53/54 → Centraal Station</b> — para voltar.</div>
-          <div class="line no">❌ Nunca pegue sentido "Isolatorweg" — é outra linha.</div>
-        </div>
-        <div class="confuse-card" style="border-left-color:var(--fr)">
-          <h4>🔴 Paris</h4>
-          <div class="line"><b>Gare du Nord → Port-Royal</b> — estação certa para o alojamento.</div>
-          <div class="line no">❌ Não desça em Denfert-Rochereau.</div>
-        </div>
-        <div class="confuse-card" style="border-left-color:var(--fr)">
-          <h4>🔴 RER B</h4>
-          <div class="line">Para <b>Gare du Nord</b>: sentido norte — Mitry-Claye / Aéroport Charles de Gaulle.</div>
-          <div class="line">Para <b>Port-Royal</b>: sentido sul — Robinson / Saint-Rémy-lès-Chevreuse / Massy-Palaiseau.</div>
-        </div>
+      <div id="confuseBody"></div>
+
+      <div class="sec-head">
+        <div class="kicker">A parte mais importante</div>
+        <h2>Se eu me perder</h2>
+      </div>
+      <div class="note">
+        Antes de entrar em qualquer trem ou metrô, confira <b>sempre</b> três itens: <b>linha</b>, <b>direção</b> e <b>destino</b>. Se os três baterem, embarque.
+      </div>
+      <div class="note">
+        Se embarcou errado: desça na próxima parada e volte — as linhas rodam nos dois sentidos com frequência alta.
       </div>
 
-      <footer class="note">
-        Conteúdo baseado na auditoria feita com fontes oficiais (NS, GVB, Île-de-France Mobilités, Eurostar — reserva real do usuário). Itens marcados <span class="nc" style="vertical-align:1px;">NÃO CONFIRMADO</span> não foram verificados oficialmente — confirme no app correspondente antes de depender deles. Nenhuma compra ou reserva foi feita neste processo.
-      </footer>
-    </section>
-
-    <!-- ===================== VIEW: ROTAS ===================== -->
-    <section id="view-rotas" class="view" hidden>
-      <div class="sec-head" style="margin-top:4px;">
-        <div class="kicker">Itinerário completo</div>
-        <h2>As 7 rotas</h2>
-      </div>
-      <div class="route-grid" id="routeGrid"></div>
-    </section>
-
-    <!-- ===================== VIEW: EUROSTAR ===================== -->
-    <section id="view-eurostar" class="view" hidden>
-      <div class="sec-head" style="margin-top:4px;">
-        <div class="kicker">Trens internacionais</div>
-        <h2>Eurostar</h2>
-      </div>
-      <div id="eurostarBody"></div>
-    </section>
-
-    <!-- ===================== VIEW: CHECKLIST ===================== -->
-    <section id="view-checklist" class="view" hidden>
-      <div class="sec-head" style="margin-top:4px;">
-        <div class="kicker">Antes de sair</div>
-        <h2>Checklist</h2>
-      </div>
-      <div class="check-progress" id="checkProgress"></div>
-      <ul class="check-list" id="checklist"></ul>
+      <div class="guide-photo" id="guidePhoto"></div>
     </section>
 
   </div>
 </main>
 
-<!-- ===================== ROUTE DETAIL OVERLAY ===================== -->
+<!-- ===================== DETALHE DE ROTA ===================== -->
 <div class="overlay" id="detailOverlay" hidden>
-  <div class="overlay-header">
-    <button class="back-btn" onclick="closeDetail()">←</button>
-    <span class="oh-title" id="detailHeaderTitle"></span>
+  <div class="ov-head">
+    <button class="back-btn" onclick="closeDetail()" aria-label="Voltar">←</button>
+    <span class="ov-title mono" id="detailTitle"></span>
   </div>
-  <div class="overlay-body" id="detailBody"></div>
+  <div class="ov-body" id="detailBody"></div>
 </div>
 
-<!-- ===================== BOTTOM NAV ===================== -->
+<!-- ===================== EMERGÊNCIA ===================== -->
+<div class="overlay" id="sosOverlay" hidden>
+  <div class="ov-head">
+    <button class="back-btn" onclick="closeSos()" aria-label="Voltar">←</button>
+    <span class="ov-title mono">Emergência</span>
+  </div>
+  <div class="ov-body" id="sosBody"></div>
+</div>
+
+<!-- ===================== FRASE AMPLIADA ===================== -->
+<div class="show-card" id="showCard" hidden onclick="closeShow()">
+  <div class="pt" id="showPt"></div>
+  <div class="xx" id="showXx"></div>
+  <div class="say mono" id="showSay"></div>
+  <div class="hint mono">Toque para fechar</div>
+</div>
+
+<!-- ===================== NAVEGAÇÃO ===================== -->
 <nav id="bottomnav">
-  <button data-view="inicio" class="active" onclick="showView('inicio')"><span class="ic">🏠</span>Início</button>
-  <button data-view="rotas" onclick="showView('rotas')"><span class="ic">🧭</span>Rotas</button>
-  <button data-view="eurostar" onclick="showView('eurostar')"><span class="ic">🚄</span>Eurostar</button>
-  <button data-view="checklist" onclick="showView('checklist')"><span class="ic">✅</span>Checklist</button>
+  <button data-view="agora"  class="active" onclick="showView('agora')"><span class="ic">🎫</span>AGORA</button>
+  <button data-view="viagem" onclick="showView('viagem')"><span class="ic">🚉</span>VIAGEM</button>
+  <button data-view="frases" onclick="showView('frases')"><span class="ic">💬</span>FRASES</button>
+  <button data-view="gastos" onclick="showView('gastos')"><span class="ic">💶</span>GASTOS</button>
+  <button data-view="guia"   onclick="showView('guia')"><span class="ic">🧭</span>GUIA</button>
 </nav>
 
-<script>
-/* =========================================================
-   DADOS ESTRUTURADOS — fonte única: manual/auditoria oficial
-   Tudo marcado NC (não confirmado) reflete exatamente o que
-   não foi possível verificar nas fontes oficiais consultadas.
-   ========================================================= */
-const NC = "NÃO CONFIRMADO";
-
-const HOST_NOTE = "<b>Instruções do anfitrião (reserva Airbnb):</b> RER B, estação Port-Royal · Metrô linhas 4 e 6, estação Raspail · Ônibus 91 e 38, parada Observatoire Port Royal · Ônibus 83, parada Observatoire Assas. A rota auditada neste guia é a do RER B.";
-
-function mapsLink(query){
-  return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(query);
-}
-
-const ROUTES = [
-  {
-    id:1, code:"ROTA 01", title:"Schiphol → Wibautstraat 150",
-    dateLabel:"02 DEZ", orderISO:"2026-12-02T14:55:00", keyTime:"14:55 (chegada do voo)",
-    country:"nl", modeIcon:"✈️", durationLabel:"~25–30 min (2 trechos)",
-    mapsQuery:"Volkshotel, Wibautstraat 150, Amsterdam",
-    stayNotes:["🏨 <b>Volkshotel: check-in a partir das 16:00</b> (reserva). O voo pousa às 14:55."],
-    chain:[
-      {place:"Schiphol Airport"}, {mode:"🚆 NS"},
-      {place:"Amsterdam Centraal"}, {mode:"🚇 Metro 53/54"},
-      {place:"Wibautstraat"}
-    ],
-    legs:[
-      { label:"Trecho 1 — Trem", accent:"nl",
-        ondeEstou:"Schiphol Airport (estação de trem, dentro do aeroporto)",
-        oQuePegar:"Trem NS (Sprinter)",
-        direcao:"Trem que para em <b>Amsterdam Centraal</b> (direto)",
-        paradas:["Amsterdam Lelylaan","Amsterdam Sloterdijk"],
-        ondeDescer:"Amsterdam Centraal",
-        saida:NC,
-        caminhada:"Não se aplica (troca direto para o metrô, mesma estação)",
-        destino:"Amsterdam Centraal",
-        duracao:"16–17 min",
-        ticket:"App NS, máquina, ou OVpay — tarifa " + NC,
-        mala:"Compatível. Elevador na plataforma: " + NC
-      },
-      { label:"Trecho 2 — Metrô", accent:"nl",
-        ondeEstou:"Amsterdam Centraal, nível do metrô",
-        oQuePegar:"Metrô GVB — linha 53 ou 54",
-        direcao:"<b>Gaasperplas</b> (linha 53) ou <b>Gein</b> (linha 54)",
-        paradas:["Nieuwmarkt","Waterlooplein","Weesperplein"],
-        ondeDescer:"Wibautstraat",
-        saida:NC,
-        caminhada:NC,
-        destino:"Volkshotel Amsterdam — Wibautstraat 150",
-        duracao:"7–8 min",
-        ticket:"GVB 1h = €3,40/pessoa, ou OVpay",
-        mala:"Compatível. Elevador na estação: " + NC
-      }
-    ],
-    naoConfunda:[
-      "No trem, confirme que o destino no painel é <b>Amsterdam Centraal</b>.",
-      "No metrô, a direção certa é <b>Gaasperplas ou Gein</b> — nunca \"Isolatorweg\" (é outra linha)."
-    ]
-  },
-  {
-    id:2, code:"ROTA 02", title:"Wibautstraat 150 → Amsterdam Centraal",
-    dateLabel:"", orderISO:"2026-12-04T08:00:00",
-    country:"nl", modeIcon:"🚇", durationLabel:"7–8 min",
-    mapsQuery:"Amsterdam Centraal",
-    stayNotes:["🏨 <b>Volkshotel: checkout até 12:00</b> (reserva). O Eurostar sai às 11:10 — faça o checkout antes de sair para a estação."],
-    chain:[{place:"Volkshotel (Wibautstraat 150)"},{mode:"🚇 Metro 53/54"},{place:"Amsterdam Centraal"}],
-    legs:[
-      { label:null, accent:"nl",
-        ondeEstou:"Volkshotel Amsterdam — Wibautstraat 150",
-        oQuePegar:"Metrô GVB — linha 53 ou 54",
-        direcao:"<b>Centraal Station</b>",
-        paradas:["Weesperplein","Waterlooplein","Nieuwmarkt"],
-        ondeDescer:"Amsterdam Centraal (estação terminal)",
-        saida:NC,
-        caminhada:NC + " (distância até a estação Wibautstraat)",
-        destino:"Amsterdam Centraal",
-        duracao:"7–8 min",
-        ticket:"GVB 1h = €3,40/pessoa, ou OVpay",
-        mala:"Compatível"
-      }
-    ],
-    naoConfunda:["Confirme na plataforma que a direção é <b>Centraal Station</b>. Se aparecer Gaasperplas ou Gein, é o sentido contrário."]
-  },
-  {
-    id:3, code:"ROTA 03", title:"Amsterdam Centraal → Paris Gare du Nord",
-    dateLabel:"04 DEZ", orderISO:"2026-12-04T11:10:00",
-    country:"intl", modeIcon:"🚄", durationLabel:"~3h25 (11:10 → 14:35)",
-    mapsQuery:"Gare du Nord, Paris",
-    chain:[{place:"Amsterdam Centraal"},{mode:"🚄 Eurostar"},{place:"Paris Gare du Nord"}],
-    legs:[
-      { label:null, accent:"eurostar",
-        ondeEstou:"Amsterdam Centraal, área Eurostar",
-        oQuePegar:"Eurostar — trem que para em Paris Gare du Nord",
-        direcao:"Direto, sem baldeação",
-        paradas:"Não se aplica (trem internacional direto)",
-        ondeDescer:"Paris Gare du Nord",
-        saida:NC + " (plataforma de embarque)",
-        caminhada:"Não se aplica",
-        destino:"Paris Gare du Nord",
-        duracao:"~3h25",
-        ticket:"Já reservado — leve o bilhete/QR code e o passaporte",
-        mala:"Standard/Plus: 2 peças de bagagem + 1 item de mão, sem limite de peso (desde que transportável)"
-      }
-    ],
-    confirmedTime:{ tag:"Reserva confirmada", dep:"11:10", arr:"14:35", sub:"~3h25 de viagem" },
-    checkinNote:"<b>Chegada recomendada: 09:40–09:55</b> (~75–90 min antes). Há controle de passaporte antes do embarque — confirme no e-mail/app da sua reserva se o tempo mínimo é este.",
-    naoConfunda:["O horário certo é <b>11:10</b>, não meio-dia — foi o erro mais grave do manual antigo. Chegue com folga por causa do controle de passaporte."]
-  },
-  {
-    id:4, code:"ROTA 04", title:"Gare du Nord → 12 Av. de l'Observatoire",
-    dateLabel:"04 DEZ", orderISO:"2026-12-04T14:35:00",
-    country:"fr", modeIcon:"🚈", durationLabel:"15–20 min",
-    mapsQuery:"12 Avenue de l'Observatoire, Paris 75006",
-    stayNotes:["🏨 <b>Check-in a partir das 16:00</b> (reserva Airbnb). O Eurostar chega às 14:35."],
-    hostNote:HOST_NOTE,
-    chain:[{place:"Paris Gare du Nord"},{mode:"🚈 RER B"},{place:"Port-Royal"},{mode:"🚶 3 min"},{place:"12 Av. de l'Observatoire"}],
-    legs:[
-      { label:null, accent:"fr",
-        ondeEstou:"Paris Gare du Nord",
-        oQuePegar:"RER B",
-        direcao:"Sentido sul — <b>Robinson / Saint-Rémy-lès-Chevreuse / Massy-Palaiseau</b>",
-        paradas:NC + " (número exato de paradas não verificado nesta auditoria)",
-        ondeDescer:"<b>Port-Royal</b> (não Denfert-Rochereau)",
-        saida:NC,
-        caminhada:"<b>~181 m / ~3 min</b> (confirmado no Île-de-France Mobilités)",
-        destino:"12 Avenue de l'Observatoire",
-        duracao:"15–20 min de trem",
-        ticket:"€2,55/pessoa — comprar em máquina ou app IDFM, validar na catraca",
-        mala:"Compatível"
-      }
-    ],
-    naoConfunda:[
-      "❌ Não desça em <b>Denfert-Rochereau</b>. A estação certa é <b>Port-Royal</b>.",
-      "Confirme sentido <b>sul</b> antes de embarcar.",
-      "RER B tem obras só à noite (22h45+, dias úteis) — não afeta este trajeto de manhã."
-    ]
-  },
-  {
-    id:5, code:"ROTA 05", title:"12 Av. de l'Observatoire → Gare du Nord",
-    dateLabel:"07 DEZ", orderISO:"2026-12-07T07:30:00",
-    country:"fr", modeIcon:"🚈", durationLabel:"15–20 min",
-    mapsQuery:"Gare du Nord, Paris",
-    stayNotes:["🏨 <b>Checkout até 11:00</b> (reserva Airbnb). O Eurostar sai às 09:24."],
-    hostNote:HOST_NOTE,
-    chain:[{place:"12 Av. de l'Observatoire"},{mode:"🚶 3 min"},{place:"Port-Royal"},{mode:"🚈 RER B"},{place:"Paris Gare du Nord"}],
-    legs:[
-      { label:null, accent:"fr",
-        ondeEstou:"12 Avenue de l'Observatoire",
-        oQuePegar:"Caminhada até Port-Royal, depois RER B",
-        direcao:"Sentido norte — <b>Mitry-Claye / Aéroport Charles de Gaulle</b>",
-        paradas:NC + " (número exato de paradas não verificado nesta auditoria)",
-        ondeDescer:"Paris Gare du Nord",
-        saida:"Siga sinalização \"Eurostar\" dentro da estação",
-        caminhada:"<b>~181 m / ~3 min</b> até Port-Royal (confirmado)",
-        destino:"Paris Gare du Nord",
-        duracao:"15–20 min de trem",
-        ticket:"€2,55/pessoa — comprar em máquina ou app IDFM, validar na catraca",
-        mala:"Compatível"
-      }
-    ],
-    recNote:"🕗 <b>Saída recomendada do alojamento (estimativa própria, não oficial):</b> ~07:50–08:00, para chegar em Gare du Nord com folga antes do Eurostar das 09:24.",
-    naoConfunda:["Embarque em Port-Royal sentido <b>norte</b> (Mitry-Claye / CDG) — o oposto da Rota 04."]
-  },
-  {
-    id:6, code:"ROTA 06", title:"Paris Gare du Nord → Amsterdam Centraal",
-    dateLabel:"07 DEZ", orderISO:"2026-12-07T09:24:00",
-    country:"intl", modeIcon:"🚄", durationLabel:"~4h26 (09:24 → 13:50)",
-    mapsQuery:"Amsterdam Centraal",
-    chain:[{place:"Paris Gare du Nord"},{mode:"🚄 Eurostar"},{place:"Amsterdam Centraal"}],
-    legs:[
-      { label:null, accent:"eurostar",
-        ondeEstou:"Paris Gare du Nord, área Eurostar",
-        oQuePegar:"Eurostar — trem que para em Amsterdam Centraal",
-        direcao:"Direto, sem baldeação",
-        paradas:"Não se aplica (trem internacional direto)",
-        ondeDescer:"Amsterdam Centraal",
-        saida:NC + " (plataforma de embarque)",
-        caminhada:"Não se aplica",
-        destino:"Amsterdam Centraal",
-        duracao:"~4h26",
-        ticket:"Já reservado — leve o bilhete/QR code e o passaporte",
-        mala:"Standard/Plus: 2 peças de bagagem + 1 item de mão, sem limite de peso (desde que transportável)"
-      }
-    ],
-    confirmedTime:{ tag:"Reserva confirmada", dep:"09:24", arr:"13:50", sub:"~4h26 de viagem" },
-    checkinNote:"<b>Chegada recomendada: 07:54–08:09</b> (~75–90 min antes). Há controle de passaporte antes do embarque — confirme no e-mail/app da sua reserva se o tempo mínimo é este.",
-    naoConfunda:["Horário certo é <b>09:24 da manhã</b>, bem mais cedo que o meio-dia do manual antigo — programe a saída de Paris com antecedência."]
-  },
-  {
-    id:7, code:"ROTA 07", title:"Amsterdam Centraal → Schiphol",
-    dateLabel:"08 DEZ", orderISO:"2026-12-08T16:00:00",
-    country:"nl", modeIcon:"✈️", durationLabel:"15–17 min",
-    mapsQuery:"Schiphol Airport",
-    chain:[{place:"Amsterdam Centraal"},{mode:"🚆 NS"},{place:"Schiphol Airport"}],
-    legs:[
-      { label:null, accent:"nl",
-        ondeEstou:"Amsterdam Centraal",
-        oQuePegar:"Trem NS (Sprinter)",
-        direcao:"Trem que para em <b>Schiphol Airport</b> (direto)",
-        paradas:["Amsterdam Sloterdijk","Amsterdam Lelylaan"],
-        ondeDescer:"Schiphol Airport (estação dentro do aeroporto)",
-        saida:"Siga sinalização do terminal / check-in",
-        caminhada:"Não se aplica",
-        destino:"Schiphol Airport — voo São Paulo 20:35",
-        duracao:"15–17 min",
-        ticket:"App NS, máquina ou OVpay — tarifa " + NC,
-        mala:"Compatível"
-      }
-    ],
-    recNote:"🕗 <b>Saída recomendada de Amsterdam Centraal (estimativa própria, não oficial):</b> ~17:15–17:45, para chegar ao Schiphol com ~2h30–3h de antecedência do voo. Ajuste conforme a política de check-in internacional da companhia.",
-    naoConfunda:["Confirme no painel que o trem <b>PARA em Schiphol Airport</b>. O horário de saída acima é estimativa, não reserva — confira o trem real no app NS no dia."]
-  }
-];
-
-const ACCENT_VAR = { nl:"--nl", fr:"--fr", intl:"--eurostar", eurostar:"--eurostar" };
-const ACCENT_SOFT_VAR = { nl:"--nl-soft", fr:"--fr-soft", intl:"--eurostar-soft", eurostar:"--eurostar-soft" };
-
-/* =========================================================
-   COMPONENTE: RouteCard (lista de rotas)
-   ========================================================= */
-function RouteCard(r){
-  const accent = `var(${ACCENT_VAR[r.country]})`;
-  const accentSoft = `var(${ACCENT_SOFT_VAR[r.country]})`;
-  return `
-    <button class="route-card" style="--accent:${accent}; --accent-soft:${accentSoft};" onclick="openDetail(${r.id})">
-      <div class="route-card-top">
-        <div>
-          <span class="route-code">${r.code}</span>
-          <div class="route-title">${r.title}</div>
-        </div>
-        <span class="route-date">${r.dateLabel}</span>
-      </div>
-      <div class="route-meta">
-        <div class="route-pill">${r.modeIcon}</div>
-        <span>⏱️ ${r.durationLabel}</span>
-      </div>
-      <span class="btn btn-outline btn-sm">ABRIR ROTA →</span>
-    </button>
-  `;
-}
-
-/* =========================================================
-   COMPONENTE: RouteTimeline (dentro do detalhe da rota)
-   ========================================================= */
-function stepsHtml(leg){
-  const rows = [
-    ["ONDE ESTOU", leg.ondeEstou],
-    ["O QUE PEGAR", leg.oQuePegar],
-    ["DIREÇÃO", leg.direcao],
-    ["PARADAS", Array.isArray(leg.paradas) ? leg.paradas.join(" → ") : leg.paradas],
-    ["ONDE DESCER", leg.ondeDescer],
-    ["SAÍDA", leg.saida],
-    ["CAMINHADA", leg.caminhada],
-    ["DESTINO", leg.destino],
-  ];
-  return rows.map(([label,val]) => `
-    <div class="step">
-      <div class="step-label">${label}</div>
-      <div class="step-value">${val}</div>
-    </div>
-  `).join("");
-}
-
-function legHtml(leg){
-  const accent = `var(${ACCENT_VAR[leg.accent]})`;
-  let html = `<div class="leg-block" style="--accent:${accent};">`;
-  if(leg.label){
-    html += `<div class="leg-title"><span class="bar"></span>${leg.label}</div>`;
-  }
-  html += `<div class="timeline">${stepsHtml(leg)}</div>`;
-  html += `
-    <div class="info-row"><span class="k">Tempo</span><span class="v">${leg.duracao}</span></div>
-    <div class="info-row"><span class="k">Bilhete</span><span class="v">${leg.ticket}</span></div>
-    <div class="info-row"><span class="k">Mala 23kg</span><span class="v">${leg.mala}</span></div>
-  `;
-  html += `</div>`;
-  return html;
-}
-
-function RouteDetail(r){
-  let html = `<div class="detail-hero"><h2 class="display">${r.title}</h2><div class="date">${r.dateLabel || "Amsterdam"}</div></div>`;
-  html += r.legs.map(legHtml).join("");
-
-  if(r.confirmedTime){
-    html += `
-      <div class="confirmed-box">
-        <span class="tag">✓ ${r.confirmedTime.tag}</span>
-        <div class="time mono">${r.confirmedTime.dep}<span class="arrow">→</span>${r.confirmedTime.arr}</div>
-        <div class="sub">${r.confirmedTime.sub}</div>
-      </div>
-    `;
-  }
-  if(r.checkinNote){ html += `<div class="rec-note">${r.checkinNote}</div>`; }
-  if(r.recNote){ html += `<div class="rec-note">${r.recNote}</div>`; }
-  if(r.stayNotes){ html += r.stayNotes.map(n => `<div class="rec-note" style="border-left-color:var(--confirmed-ink)">${n}</div>`).join(""); }
-  if(r.hostNote){ html += `<div class="rec-note">${r.hostNote}</div>`; }
-
-  if(r.naoConfunda && r.naoConfunda.length){
-    html += `
-      <div class="alert-box">
-        <div class="head">⚠️ Não confunda</div>
-        <ul>${r.naoConfunda.map(t => `<li>${t}</li>`).join("")}</ul>
-      </div>
-    `;
-  }
-
-  html += `<a class="maps-btn" href="${mapsLink(r.mapsQuery)}" target="_blank" rel="noopener">📍 Abrir Google Maps — ${r.mapsQuery}</a>`;
-  return html;
-}
-
-/* =========================================================
-   Próxima rota — calculada a partir da data atual do aparelho
-   ========================================================= */
-function computeNextRoute(){
-  const now = new Date();
-  let next = ROUTES.find(r => new Date(r.orderISO) >= now);
-  if(!next){
-    // Viagem terminou (passado 08/12)
-    return { isComplete: true, id: null, code: "✅", title: "VIAGEM CONCLUÍDA",
-             dateLabel: "08 DEZ", keyTime: "Você retornou ao Brasil",
-             country: "nl", modeIcon: "✈️", durationLabel: "Até o próximo destino!",
-             chain: [{place:"Você voltou para casa"}],
-             mapsQuery: "Brasil" };
-  }
-  return next;
-}
-
-function renderNextRouteCard(){
-  const r = computeNextRoute();
-  const accent = `var(${ACCENT_VAR[r.country]})`;
-  const chainHtml = r.chain.map((node, i) => {
-    if(node.place){
-      return `<div class="chain-node"><span class="chain-dot"></span><span class="chain-place">${node.place}</span></div>` +
-             (i < r.chain.length - 1 ? `<div class="chain-line"></div>` : "");
-    } else {
-      return `<div class="chain-mode">${node.mode}</div>` +
-             (i < r.chain.length - 1 ? `<div class="chain-line"></div>` : "");
-    }
-  }).join("");
-
-  const btnHtml = r.isComplete
-    ? `<button class="btn btn-outline" onclick="showView('rotas')" style="margin-top:16px;">📖 REVISAR ROTEIRO</button>`
-    : `<button class="btn btn-primary" onclick="openDetail(${r.id})">VER ROTA COMPLETA</button>`;
-
-  document.getElementById("nextRouteCard").innerHTML = `
-    <div class="next-card" style="--accent:${accent};">
-      <div class="next-label">${r.modeIcon} ${r.isComplete ? "Status" : "Próxima rota"}</div>
-      <div class="next-title">${r.title}</div>
-      <div class="next-time">${r.dateLabel || ""} ${r.keyTime ? "· " + r.keyTime : (r.confirmedTime ? "· " + r.confirmedTime.dep : "")}</div>
-      <div class="chain">${chainHtml}</div>
-      ${btnHtml}
-    </div>
-  `;
-}
-
-/* =========================================================
-   Eurostar view
-   ========================================================= */
-function renderEurostar(){
-  const legs = ROUTES.filter(r => r.confirmedTime);
-  const html = legs.map(r => `
-    <div class="eu-card">
-      <div class="eu-flags">${r.country === "intl" && r.id === 3 ? "🇳🇱 → 🇫🇷" : "🇫🇷 → 🇳🇱"}</div>
-      <div class="eu-date mono">${r.dateLabel}</div>
-      <div class="eu-train">✓ Reserva Eurostar confirmada</div>
-      <div class="eu-time mono">${r.confirmedTime.dep}<span class="arrow">→</span>${r.confirmedTime.arr}</div>
-      <div class="eu-chain">${r.chain[0].place} <span>↓</span><br><span>${r.chain[2] ? r.chain[2].place : r.chain[r.chain.length - 1].place}</span></div>
-      <div class="rec-note" style="margin-top:14px;">${r.checkinNote}</div>
-      <button class="btn btn-outline" style="margin-top:14px;" onclick="openDetail(${r.id})">VER ROTA COMPLETA</button>
-    </div>
-  `).join("");
-  document.getElementById("eurostarBody").innerHTML = html;
-}
-
-/* =========================================================
-   Checklist com persistência em localStorage
-   ========================================================= */
-const CHECKLIST_ITEMS = [
-  { id:"c1", label:"Conferir Google Maps / NS / GVB / RATP" },
-  { id:"c2", label:"Conferir interrupções" },
-  { id:"c3", label:"Conferir painel da estação" },
-  { id:"c4", label:"Confirmar linha" },
-  { id:"c5", label:"Confirmar direção" },
-  { id:"c6", label:"Confirmar destino" },
-  { id:"c7", label:"Conferir horário do trem" },
-  { id:"c8", label:"Conferir QR code do bilhete" },
-];
-const CHECK_KEY = "gps-viagem-checklist-2026";
-
-function loadCheckState(){
-  try { return JSON.parse(localStorage.getItem(CHECK_KEY) || "{}"); }
-  catch(e){ return {}; }
-}
-function saveCheckState(state){
-  try { localStorage.setItem(CHECK_KEY, JSON.stringify(state)); } catch(e){}
-}
-function renderChecklist(){
-  const state = loadCheckState();
-  const list = document.getElementById("checklist");
-  list.innerHTML = CHECKLIST_ITEMS.map(item => `
-    <li class="check-item ${state[item.id] ? "done" : ""}" data-id="${item.id}">
-      <span class="box">✓</span><span class="lbl">${item.label}</span>
-    </li>
-  `).join("");
-  list.querySelectorAll(".check-item").forEach(el => {
-    el.addEventListener("click", () => {
-      const id = el.getAttribute("data-id");
-      const s = loadCheckState();
-      s[id] = !s[id];
-      saveCheckState(s);
-      el.classList.toggle("done");
-      updateCheckProgress();
-    });
-  });
-  updateCheckProgress();
-}
-function updateCheckProgress(){
-  const state = loadCheckState();
-  const done = CHECKLIST_ITEMS.filter(i => state[i.id]).length;
-  document.getElementById("checkProgress").textContent = `${done} / ${CHECKLIST_ITEMS.length} conferidos`;
-}
-
-/* =========================================================
-   Navegação: views + overlay de detalhe + âncoras
-   ========================================================= */
-function showView(name){
-  document.querySelectorAll(".view").forEach(v => v.hidden = (v.id !== "view-" + name));
-  document.querySelectorAll("#bottomnav button").forEach(b => {
-    b.classList.toggle("active", b.getAttribute("data-view") === name);
-  });
-  closeDetail();
-  window.scrollTo(0,0);
-  if(location.hash.replace("#","") !== name){
-    history.replaceState(null, "", "#" + name);
-  }
-}
-
-function openDetail(id){
-  const r = ROUTES.find(x => x.id === id);
-  if(!r) return;
-  document.getElementById("detailHeaderTitle").textContent = r.code;
-  document.getElementById("detailBody").innerHTML = RouteDetail(r);
-  const overlay = document.getElementById("detailOverlay");
-  overlay.hidden = false;
-  overlay.scrollTop = 0;
-  history.replaceState(null, "", "#rota-" + id);
-}
-function closeDetail(){
-  document.getElementById("detailOverlay").hidden = true;
-}
-
-function handleHash(){
-  const hash = location.hash.replace("#","");
-  if(!hash){ return; }
-  const routeMatch = hash.match(/^rota-(\d+)$/);
-  if(routeMatch){
-    showView("rotas");
-    openDetail(parseInt(routeMatch[1], 10));
-    return;
-  }
-  if(["inicio","rotas","eurostar","checklist"].includes(hash)){
-    showView(hash);
-  }
-}
-
-/* =========================================================
-   Boot
-   ========================================================= */
-function boot(data){
-  renderNextRouteCard();
-  document.getElementById("routeGrid").innerHTML = ROUTES.map(RouteCard).join("");
-  renderEurostar();
-  renderChecklist();
-  window.addEventListener("hashchange", handleHash);
-  if(location.hash) handleHash();
-}
-window.claude?.hot?.ready ? window.claude.hot.ready(boot) : boot({});
-</script>
-
-<script>
-/* Lazy-load da imagem 2 (fundo do diário) — não bloqueia o primeiro render */
-(function(){
-  var SRC = "img/diario.webp";
-  function apply(){
-    var img = new Image();
-    img.onload = function(){
-      var root = document.documentElement;
-      root.style.setProperty("--diary-img", 'url("' + SRC + '")');
-      requestAnimationFrame(function(){ root.classList.add("diary-ready"); });
-    };
-    img.src = SRC;
-  }
-  function schedule(){
-    if("requestIdleCallback" in window){ requestIdleCallback(apply, {timeout:1200}); }
-    else { setTimeout(apply, 150); }
-  }
-  if(document.readyState === "complete"){ schedule(); }
-  else { window.addEventListener("load", schedule, {once:true}); }
-})();
-</script>
+<script src="js/data.js"></script>
+<script src="js/content.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

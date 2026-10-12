@@ -365,16 +365,69 @@ quiser antes da construção.
 
 ### 8.1 Amsterdam
 
-Janela curta: chegada 02/12 às 14:55, saída 04/12 de manhã, mais a tarde de 07/12 e o dia
-08/12 até o voo. Na prática, 03/12 é o único dia cheio.
+**Amsterdam tem mais tempo que Paris, não menos.** Chegada 02/12 à tarde, 03/12 inteiro,
+manhã do 04/12, volta em 07/12 às 13:50 com a tarde livre, e 08/12 quase inteiro até sair
+para o Schiphol. São cerca de três dias úteis contra dois em Paris.
 
-| Lugar | Onde | Link verificado |
+A lista é organizada por distância do Volkshotel (Wibautstraat 150, Amsterdam Oost),
+porque essa é a informação que só este site tem.
+
+**Perto do alojamento — Oost e De Pijp**
+
+| Lugar | O que é | Link |
 |---|---|---|
-| Rijksmuseum | Museumplein | ✅ 200 |
-| Van Gogh Museum | Museumplein | ✅ 200 |
-| Anne Frank Huis | Jordaan | ✅ 200 |
-| Stedelijk Museum | Museumplein | ✅ 202 |
-| Zaanse Schans (bate-volta) | fora da cidade | ✅ 200 |
+| Oosterpark | Parque ao lado do hotel | — (espaço público) |
+| Tropenmuseum | Culturas do mundo, dentro do Oosterpark | ✅ 200 |
+| Albert Cuyp Markt | Mercado de rua em De Pijp | ✅ 200 |
+| Brouwerij 't IJ | Cervejaria dentro de um moinho de vento | ✅ 200 |
+
+**Museumplein**
+
+| Lugar | O que é | Link |
+|---|---|---|
+| Rijksmuseum | Arte e história holandesa | ✅ 200 |
+| Van Gogh Museum | Maior acervo do pintor | ✅ 200 |
+| Stedelijk Museum | Arte moderna e design | ✅ 202 |
+| Moco Museum | Arte urbana e contemporânea | ⏳ domínio resolve, bloqueia automação |
+
+**Centro e canais**
+
+| Lugar | O que é | Link |
+|---|---|---|
+| Anne Frank Huis | Casa-museu no Jordaan | ✅ 200 |
+| Museum Het Rembrandthuis | Casa e ateliê de Rembrandt | ✅ 200 |
+| Paleis op de Dam | Palácio real na praça Dam | ✅ 200 |
+| Het Scheepvaartmuseum | Museu marítimo | ✅ 200 |
+
+**Do outro lado do IJ** — balsa gratuita atrás da Centraal
+
+| Lugar | O que é | Link |
+|---|---|---|
+| Eye Filmmuseum | Cinema e arquitetura | ✅ 200 |
+| A'DAM Lookout | Mirante sobre a cidade | ✅ 200 |
+
+**Outros**
+
+| Lugar | O que é | Link |
+|---|---|---|
+| Artis | Zoológico, um dos mais antigos da Europa | ✅ 200 |
+| Micropia | Museu de micro-organismos, no mesmo complexo | ✅ 200 |
+| NEMO Science Museum | Ciência, com terraço de vista | ✅ 200 |
+| Heineken Experience | Antiga cervejaria | ⏳ domínio resolve, bloqueia automação |
+| Zaanse Schans | Moinhos de vento, bate-volta de trem | ✅ 200 |
+
+**Específico de dezembro**
+
+| Lugar | O que é | Link |
+|---|---|---|
+| Amsterdam Light Festival | Percurso de arte em luz pelos canais, temporada de inverno | ✅ 200 |
+
+O Light Festival é o item mais característico da sua janela de viagem — mas as datas e o
+percurso mudam a cada edição e **não entram escritos no site**: só o link oficial.
+
+Fora da lista por não ter sido possível verificar: **Foam** (fotografia) devolve 429
+persistente. **Keukenhof** não entra de propósito — é jardim de tulipas, abre só na
+primavera.
 
 ### 8.2 Paris
 
